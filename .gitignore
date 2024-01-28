@@ -1,0 +1,7 @@
+**/env
+**/node_modules
+**/.vscode
+**/__pycache__
+/docker-data
+
+.DS_Store

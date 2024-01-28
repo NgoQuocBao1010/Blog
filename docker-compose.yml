@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+    database:
+        container_name: article-db
+        environment:
+            - POSTGRES_DB=baobao
+            - POSTGRES_USER=baobao
+            - POSTGRES_PASSWORD=baobao
+        image: postgres:15.2
+        ports:
+            - "5439:5432"
+        volumes:
+            - article-db:/var/lib/postgresql/data
+
+    server:
+        build:
+            context: ./server
+        container_name: article-server
+        depends_on:
+            - database
+        environment:
+            - SQL_ENGINE=django.db.backends.postgresql
+            - SQL_DATABASE=baobao
+            - SQL_USER=baobao
+            - SQL_PASSWORD=baobao
+            - SQL_HOST=article-db
+            - SQL_PORT=5432
+        command: ["bash", "start.sh"]
+        ports:
+            - 8000:8000
+        volumes:
+            - ./server:/usr/src/app
+
+volumes:
+    article-db:

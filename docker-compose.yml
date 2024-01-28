@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-    database:
+    blog-db:
         container_name: article-db
         environment:
             - POSTGRES_DB=baobao
@@ -13,12 +13,12 @@ services:
         volumes:
             - article-db:/var/lib/postgresql/data
 
-    server:
+    blog-server:
         build:
             context: ./server
         container_name: article-server
         depends_on:
-            - database
+            - blog-db
         environment:
             - SQL_ENGINE=django.db.backends.postgresql
             - SQL_DATABASE=baobao
@@ -26,7 +26,6 @@ services:
             - SQL_PASSWORD=baobao
             - SQL_HOST=article-db
             - SQL_PORT=5432
-        command: ["bash", "start.sh"]
         ports:
             - 8000:8000
         volumes:

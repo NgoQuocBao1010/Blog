@@ -1,4 +1,5 @@
 .dockerignore
 *.pyc
+*.sqlite3
 __pycache__
 env

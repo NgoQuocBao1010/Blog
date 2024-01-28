@@ -1,6 +1,6 @@
 USER="admin"
 PASS="super_password"
-MAIL="admin@mail.com"
+MAIL="admin@gmail.com"
 NAME="Admin"
 script="
 from user.models import User;

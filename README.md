@@ -21,10 +21,16 @@ Python 3.11
 docker-compose up -d
 ```
 
-1. Dump example data
+1. Dump example data (**_optional_**)
 
 ```
 docker-compose exec server python manage.py loaddata initial_articles.json
+```
+
+1. Create a super user (Email: `admin@gmail.com` && password: `super_password`)
+
+```
+docker-compose exec blog-server bash createSuperuser.sh
 ```
 
 1. Test the API on **http://127.0.0.1:8000/api/docs**

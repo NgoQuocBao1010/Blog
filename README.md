@@ -24,7 +24,7 @@
 1. Dump example data (**_optional_**)
 
     ```
-    docker-compose exec server python manage.py loaddata initial_articles.json
+    docker-compose exec blog-server python manage.py loaddata initial_articles.json
     ```
 
 1. Create a super user (Email: `admin@gmail.com` && password: `super_password`)

@@ -10,7 +10,7 @@ password = '$PASS';
 email = '$MAIL';
 fullName = '$NAME';
 
-if User.objects.filter(username=username).count()==0:
+if User.objects.filter(email=email).count()==0:
     User.objects.create_superuser(email, username, fullName, password);
     print('Superuser created.');
 else:

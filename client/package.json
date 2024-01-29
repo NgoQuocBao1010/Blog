@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "pinia": "^2.1.7",
+        "primevue": "^3.47.2",
         "sass": "^1.70.0",
         "vue": "^3.3.11",
         "vue-router": "^4.2.5"

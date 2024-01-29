@@ -1,7 +1,13 @@
 <script setup></script>
 
 <template>
-    <h1>Hello World</h1>
+    <div class="container">
+        <RouterView />
+    </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+    height: 100vh;
+}
+</style>
